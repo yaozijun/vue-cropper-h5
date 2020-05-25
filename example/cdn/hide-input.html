@@ -47,7 +47,7 @@
 <body>
     <div class="dome" id="app">
         <!-- <img :src="require('@/assets/logo.png')"></img> -->
-        <input type="file" name="img" @change="chnage">
+        <input type="file" name="img" @change="change">
         <div class="cropper">
             <img :src="img" class="img" />
             <!-- option是配置，格式是对象，getbase64Data是组件的一个方法获取裁剪完的头像 -->
@@ -68,7 +68,7 @@
                 }
             },
             methods: {
-                chnage({target}){
+                change({target}){
                     this.$refs.cropper.loadFile(target.files[0])
                     target.value = ''
                 },
